@@ -13,7 +13,7 @@ const Header = () => {
   })
   return (
     <div className={`fixed w-full bg-white z-10 ${isScroll? 'shadow-md' : ''}`}>
-      <div className="flex justify-between items-center container mx-auto px-4">
+      <div className="flex flex-row-reverse justify-between items-center container mx-auto px-4">
         <div>
           <img className="w-32" src={logo} alt="onlineshop logo" />
         </div>
