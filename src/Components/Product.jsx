@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import Tooltip from "./Tooltip";
 
 const Product = ({ products }) => {
   const { addToCart, clearCart } = useContext(CartContext);
@@ -14,12 +15,14 @@ const Product = ({ products }) => {
           />
         </Link>
         <div className="absolute top-3 -right-11 group-hover:right-5 p-2 flex gap-y-2 flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button
-            onClick={() => addToCart(products)}
-            className="text-white text-3xl bg-red-500 p-2 w-12 h-12 flex justify-center items-center"
-          >
-            +
-          </button>
+          <Tooltip tooltipText={"Add to Cart"}>
+            <button
+              onClick={() => addToCart(products)}
+              className="text-white text-3xl bg-red-500 p-2 w-12 h-12 flex justify-center items-center"
+            >
+              +
+            </button>
+          </Tooltip>
           <Link
             to={`/product/${products.id}`}
             className="w-12 h-12 shadow-md bg-white flex justify-center items-center"

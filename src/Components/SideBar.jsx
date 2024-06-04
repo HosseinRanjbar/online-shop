@@ -3,6 +3,7 @@ import { SideBarContext } from "../Context/SideBarContext";
 import { CartContext } from "../Context/CartContext";
 import CartItem from "./CartItem";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const { isOpen, handleClose } = useContext(SideBarContext);
@@ -48,6 +49,24 @@ const SideBar = () => {
             <Button onClick={clearCart} color="warning" variant="contained">
               clear all
             </Button>
+          </div>
+        </div>
+        <div>
+          {/* <div className="mt-10">
+            <Button className="w-full" variant="contained">
+              View Cart
+            </Button>
+          </div> */}
+          <div className="mt-5 text-4xl">
+            <Link to={"/cart"}>
+              <Button
+                className="w-full font-semibold"
+                color="inherit"
+                variant="contained"
+              >
+                pay
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
