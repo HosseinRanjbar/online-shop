@@ -45,7 +45,7 @@ const Product = ({ products }) => {
           {products.category}
         </div>
         <Link to={`/product/${products.id}`}>
-          <h2 className="font-semibold">{products.title}</h2>
+          <h2 className="font-semibold truncate">{products.title}</h2>
         </Link>
         <div className="font-semibold">${products.price}</div>
       </div>
