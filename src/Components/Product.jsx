@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 
 const Product = ({ products }) => {
-  const { addToCart , clearCart} = useContext(CartContext);
+  const { addToCart, clearCart } = useContext(CartContext);
   return (
     <div>
       <div className="border h-80 relative flex flex-col justify-center items-center group transition">
-        <img
-          className="max-h-40 group-hover:scale-110 transition duration-300"
-          src={products.image}
-        />
+        <Link to={`/product/${products.id}`}>
+          <img
+            className="max-h-40 group-hover:scale-110 transition duration-300"
+            src={products.image}
+          />
+        </Link>
         <div className="absolute top-3 -right-11 group-hover:right-5 p-2 flex gap-y-2 flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button
             onClick={() => addToCart(products)}
