@@ -14,33 +14,32 @@ const Product = ({ products }) => {
             src={products.image}
           />
         </Link>
-        <div className="absolute top-3 -right-11 group-hover:right-5 p-2 flex gap-y-2 flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <Tooltip tooltipText={"Add to Cart"}>
+        <div className="bg-red-100 rounded absolute top-3 -right-11 group-hover:right-5 p-2 flex gap-y-2 flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <Tooltip top={true} tooltipText={"Add to Cart"}>
             <button
               onClick={() => addToCart(products)}
-              className="text-white text-3xl bg-red-500 p-2 w-12 h-12 flex justify-center items-center"
+              className="text-white text-3xl bg-red-500 p-2 w-12 h-12 flex justify-center items-center rounded-md"
             >
               +
             </button>
           </Tooltip>
-          <Link
-            to={`/product/${products.id}`}
-            className="w-12 h-12 shadow-md bg-white flex justify-center items-center"
-          >
+          <Tooltip bottom={true} tooltipText={"product page"}>
+            <Link to={`/product/${products.id}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
+              viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-7"
+              className="size-6 text-black bg-white p-2 w-12 h-12 flex justify-center items-center rounded-md"
             >
-              <path d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
               <path
                 fillRule="evenodd"
-                d="M.664 10.59a1.651 1.651 0 0 1 0-1.186A10.004 10.004 0 0 1 10 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0 1 10 17c-4.257 0-7.893-2.66-9.336-6.41ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
+                d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
                 clipRule="evenodd"
               />
             </svg>
-          </Link>
+            </Link>
+          </Tooltip>
         </div>
       </div>
       <div>

@@ -5,6 +5,7 @@ import ProductDetails from "./Pages/ProductDetails";
 import Header from "./Components/Header";
 import SideBar from "./Components/SideBar";
 import Footer from "./Components/Footer";
+import Tooltip from "./Components/Tooltip";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/tltip" element={<Tooltip bottom={true} tooltipText={'this is tooltip'}></Tooltip>} /> */}
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
         <SideBar />
