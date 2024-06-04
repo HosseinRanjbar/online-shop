@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import { SideBarContext } from "../Context/SideBarContext";
+import { CartContext } from "../Context/CartContext";
+import CartItem from "./CartItem";
+import { Button } from "@mui/material";
 
 const SideBar = () => {
   const { isOpen, handleClose } = useContext(SideBarContext);
+  const { cart, clearCart, total, cartAmount } = useContext(CartContext);
   return (
     <div>
       <div
@@ -24,7 +28,27 @@ const SideBar = () => {
               clipRule="evenodd"
             />
           </svg>
-          <div className="font-semibold capitalize">Shopping Bag (0)</div>
+          <div className="font-semibold capitalize">
+            Shopping Bag ({cartAmount})
+          </div>
+        </div>
+        <div className="overflow-y-auto max-h-[37rem]">
+          {cart.map((item) => (
+            <CartItem item={item} key={item.id} />
+          ))}
+        </div>
+        {/* total cart */}
+        <div className="p-2 flex justify-between items-center">
+          <div>
+            <p className="text-2xl font-semibold ">
+              <span>Total:</span> $ {parseFloat(total).toFixed(2)}
+            </p>
+          </div>
+          <div>
+            <Button onClick={clearCart} color="warning" variant="contained">
+              clear all
+            </Button>
+          </div>
         </div>
       </div>
     </div>
