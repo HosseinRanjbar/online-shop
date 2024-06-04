@@ -6,7 +6,7 @@ const Product = ({ products }) => {
   const { addToCart, clearCart } = useContext(CartContext);
   return (
     <div>
-      <div className="border h-80 relative flex flex-col justify-center items-center group transition">
+      <div className=" h-80 relative flex flex-col justify-center items-center group transition">
         <Link to={`/product/${products.id}`}>
           <img
             className="max-h-40 group-hover:scale-110 transition duration-300"

@@ -36,17 +36,30 @@ const Home = () => {
               id="filter"
               onChange={handleChange}
             >
-              <option value="all">All</option>
-              <option value="men's clothing">Men's clothing</option>
-              <option value="jewelery">Jewelery</option>
-              <option value="electronics">Electronics</option>
-              <option value="women's clothing">Women's clothing</option>
+              <option className="capitalize" value="all">
+                All
+              </option>
+              <option className="capitalize" value="men's clothing">
+                Men's clothing
+              </option>
+              <option className="capitalize" value="jewelery">
+                Jewelery
+              </option>
+              <option className="capitalize" value="electronics">
+                Electronics
+              </option>
+              <option className="capitalize" value="women's clothing">
+                Women's clothing
+              </option>
             </select>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm md:max-w-none md:mx min-h-screen">
             {filteredProducts.map((products) => (
-              <div className="w-full " key={products.id}>
+              <div
+                className="w-full shadow-lg p-2 h-fit border rounded-sm"
+                key={products.id}
+              >
                 {<Product products={products} />}
               </div>
             ))}

@@ -11,7 +11,7 @@ const CartItem = ({ item }) => {
   return (
     <>
       <div className="flex flex-col justify-between items-center border-b">
-        <div className="w-full min-h-36 flex p-5 gap-x-4 max-h-40">
+        <div className="w-full min-h-36 flex p-5 gap-x-4 max-h-fit">
           {/* image */}
           <Link to={`/product/${id}`}>
             <img className="max-w-20" src={image} alt="" />
@@ -29,11 +29,11 @@ const CartItem = ({ item }) => {
 
               {/* pricing */}
               <div className="flex justify-start items-center gap-x-3.5">
-                <div className="flex justify-between items-center border">
+                <div className="flex justify-between items-center border rounded-md">
                   {/* add */}
                   <div
                     onClick={() => increaseAmount(id)}
-                    className="w-1/3 flex justify-center items-center hover:bg-green-600 hover:text-white cursor-pointer p-2"
+                    className="w-1/3 flex justify-center items-center hover:bg-green-600 hover:text-white cursor-pointer p-2 rounded-md"
                   >
                     +
                   </div>
@@ -44,7 +44,7 @@ const CartItem = ({ item }) => {
                   {/* minus */}
                   <div
                     onClick={() => decreaseAmount(id)}
-                    className="w-1/3 flex justify-center items-center hover:bg-red-600 hover:text-white cursor-pointer p-2"
+                    className="w-1/3 flex justify-center items-center hover:bg-red-600 hover:text-white cursor-pointer p-2 rounded-md"
                   >
                     -
                   </div>
