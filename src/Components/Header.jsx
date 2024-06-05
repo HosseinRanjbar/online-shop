@@ -3,6 +3,7 @@ import { SideBarContext } from "../Context/SideBarContext";
 import logo from "../assets/logo/logo.jpg";
 import MyBadge from "../assets/Badge";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(SideBarContext);
@@ -22,8 +23,18 @@ const Header = () => {
             <img className="w-32" src={logo} alt="onlineshop logo" />
           </Link>
         </div>
-        <div onClick={() => setIsOpen(!isOpen)}>
-          <MyBadge />
+        <div>
+          <Link to={"/"}>Home</Link>
+        </div>
+        <div className="flex justify-between items-center">
+          <div onClick={() => setIsOpen(!isOpen)}>
+            <MyBadge />
+          </div>
+          <div>
+            <Link to={"/login"}>
+              <Button variant="contained">Login</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
